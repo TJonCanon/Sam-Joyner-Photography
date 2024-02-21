@@ -1,0 +1,49 @@
+---
+
+---
+<header class="w-full fixed top-0 bg-gray-300">
+    <section class="text-lg">
+        <nav class="flex justify-between items-center px-20 pt-5 pb-5">
+            <div>
+                <a href="#"><img class="w-40" src="SJLogoSmall.png" alt=""></a>
+            </div>
+            <button id="hamburger-button" class="text-5xl sm:hidden">
+                &#9776
+            </button>
+            <div class="hidden sm:block">
+                <ul class="flex md:flex-row gap-x-4 font-semibold">
+                    <li><a href="#" class="hover:underline hover:underline-offset-4">Home</a></li>
+                    <li><a href="#" class="hover:underline hover:underline-offset-4">Portfolio</a></li>
+                    <li><a href="#" class="hover:underline hover:underline-offset-4">About</a></li>
+                    <li><a href="#" class="hover:underline hover:underline-offset-4">Contact</a></li>
+                </div>
+            </nav>
+        </header>
+    </section>
+    <section id="mobile-menu" class="absolute top-0 bg-gray-300 w-full text-5xl flex-col justify-center origin-top animate-open-menu hidden">
+        <button class="text-8xl self-end px-6">
+            &times;
+        </button>
+        <nav class="flex flex-col min-h-screen item-center py-8" aria-label="mobile">
+            <a href="#" class="w-full text-center py-6 hover:underline hover:underline-offset-4">Home</a>
+            <a href="#" class="w-full text-center py-6 hover:underline hover:underline-offset-4">Portfolio</a>
+            <a href="#" class="w-full text-center py-6 hover:underline hover:underline-offset-4">About</a>
+            <a href="#" class="w-full text-center py-6 hover:underline hover:underline-offset-4">Contact</a>
+        </nav>
+    </section>
+<script defer>
+    const initApp = () => {
+    const hamburgerBtn = document.getElementById('hamburger-button')
+    const mobileMenu = document.getElementById('mobile-menu')
+
+    const toggleMenu = () => {
+        mobileMenu.classList.toggle('hidden')
+        mobileMenu.classList.toggle('flex')
+    }
+
+    hamburgerBtn.addEventListener('click', toggleMenu)
+    mobileMenu.addEventListener('click', toggleMenu)
+}
+
+document.addEventListener('DOMContentLoaded', initApp)
+</script>
